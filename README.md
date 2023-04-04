@@ -69,9 +69,9 @@ gpu: 0 # Our model can be trained using a single RTX A5000 GPU. You can also tra
 3. Train the network
 
 To train the model using different types of activation function copy the content of that model in the model.py:
-a. For GELU activation function copy the content of model_gelu.py to model.py
-b. For Swish activation function copy the content of model_swish.py to model.py
-c. For LeakyRelu activation function copy the content of model_leakyRelu.py to model.py
+1. For GELU activation function copy the content of model_gelu.py to model.py
+2. For Swish activation function copy the content of model_swish.py to model.py
+3. For LeakyRelu activation function copy the content of model_leakyRelu.py to model.py
 
 If you want to train the network on 256X256 images:
 ```python
@@ -82,21 +82,5 @@ or you want to train on original resolution, e.g., 480X640 for ISTD:
 python train.py --warmup --win_size 10 --train_ps 320
 ```
 
-
-## Evaluation
-The results reported in the paper are calculated by the `matlab` script used in [previous method](https://github.com/zhuyr97/AAAI2022_Unfolding_Network_Shadow_Removal/tree/master/codes). Details refer to `evaluation/measure_shadow.m`.
-We also provide the `python` code for calculating the metrics in `test.py`, using `python test.py --cal_metrics` to print.
-
-## Results
-#### Evaluation on ISTD
-The evauluation results on ISTD are as follows
-| Method | PSNR | SSIM | RMSE |
-| :-- | :--: | :--: | :--: |
-| ST-CGAN | 27.44 | 0.929 | 6.65 |
-| DSC | 29.00 | 0.944 | 5.59 |
-| DHAN | 29.11 | 0.954 | 5.66 |
-| Fu et al. | 27.19 | 0.945 | 5.88 |
-| Zhu et al. | 29.85 | 0.960 | 4.27 |
-| **ShadowFormer (Ours)** | **32.21** | **0.968** | **4.09** |
 
 
